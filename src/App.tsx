@@ -1,3 +1,4 @@
+import DropDown from "./shared/ui/DropDown/DropDown"
 import Input from "./shared/ui/Input/Input"
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
         inputId="name"
         placeholder="Введите имя персонажа"
       />
+      <DropDown title={"Жив?"} options={["Жив", "Мёртв"]} onSelect={()=>{}}></DropDown>
     </div>
     </>
   )
