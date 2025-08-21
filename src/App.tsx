@@ -1,11 +1,10 @@
-import CharacterSearchForm from "./shared/CharacterSearchForm/CharacterSearchForm"
+import CharacterSearchSection from "./shared/CharacterSearchSection/CharacterSearchSection"
 
 function App() {
   return (
     <>
-    <div className="bg-black font-comic text-white h-screen">
-      <h1>Hello world!</h1>
-      <CharacterSearchForm/>
+    <div className="bg-black font-comic text-white h-screen p-5">
+      <CharacterSearchSection/>
     </div>
     </>
   )

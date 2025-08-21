@@ -16,7 +16,7 @@ const Input: React.FC<InputProps> = ({
     placeholder,
 }) => {
     return (
-        <div className='flex flex-col gap-1'>
+        <div className='flex flex-col gap-1 mb-3'>
             <label htmlFor={inputId}>{label}</label>
             <input
                 className='p-1 border border-solid border-white rounded-lg'

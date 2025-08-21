@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 
+type optionsType = {ru:string, eng: string}
+
 type DropDownProps = {
   title: string;
-  options: string[];
+  options: optionsType[];
   onSelect: (value: string) => void;
 };
 
@@ -16,7 +18,7 @@ const DropDown: React.FC<DropDownProps> = ({ title, options, onSelect }) => {
   };
 
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col gap-1 grow">
       <label>{title}</label>
       <select
         value={value}
@@ -27,8 +29,8 @@ const DropDown: React.FC<DropDownProps> = ({ title, options, onSelect }) => {
           -- выберите вариант --
         </option>
         {options.map((opt) => (
-          <option className="bg-black" key={opt} value={opt}>
-            {opt}
+          <option className="bg-black" key={opt.eng} value={opt.eng}>
+            {opt.ru}
           </option>
         ))}
       </select>

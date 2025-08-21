@@ -10,22 +10,41 @@ const CharacterSearchForm: React.FC<CharacterSearchFormProps> = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="flex flex-col gap-1">
       <Input
         label="Имя персонажа"
         onChange={() => {}}
         inputId="name"
         placeholder="Введите имя персонажа"
       />
-      <fieldset className="flex justify-between">
-        <DropDown title={"Жив?"} options={["Жив", "Мёртв", "Неизвестно"]} onSelect={()=>{}}></DropDown>
-        <DropDown title={"Раса?"} options={["ЗАПОЛНИТЬ", "РАСЫ"]} onSelect={()=>{}}></DropDown>
+      <fieldset className="flex justify-between mb-3 justify-items-stretch gap-3 max-sm:flex-col">
+        <DropDown
+          title={"Жив?"}
+          options={[{ru:"Жив", eng: "Alive"}, {ru:"Мёртв", eng: "DeaD"}, {ru:"Неизвестно", eng: "unknown"}]}
+          onSelect={() => {}}
+        ></DropDown>
+        <DropDown
+          title={"Раса?"}
+          options={[
+            {ru:"Человек", eng: "Human"},
+            {ru:"Пришелец", eng: "Alien"},
+            {ru:"Гуманойд", eng: "Humanoid"},
+            {ru:"Неизвестно", eng: "unknown"},
+            {ru:"Жопосранчик", eng: "Poopybutthole"},
+            {ru:"Мифическое создание", eng: "Mythological Creature"},
+            {ru:"Животное", eng: "Animal"},
+            {ru:"Робот", eng: "Robot"},
+            {ru:"Кроненберг", eng: "Cronenberg"},
+            {ru:"Болезнь", eng: "Disease"}
+          ]}
+          onSelect={() => {}}
+        ></DropDown>
       </fieldset>
       <Input
         label="Эпизод"
         onChange={() => {}}
         inputId="episode"
-        placeholder="Введите название эпизода"
+        placeholder="Введите название или номер эпизода"
       />
     </form>
   );
