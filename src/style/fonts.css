@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "Comic Relief";
+  src:
+    local("ComicRelief-Bold"),
+    url("../assets/fonts/ComicRelief-Bold.woff") format("woff"),
+    url("../assets/fonts/ComicRelief-Bold.woff2") format("woff2");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Comic Relief";
+  src:
+    local("ComicRelief-Regular"),
+    url("../assets/fonts/ComicRelief-Regular.woff") format("woff"),
+    url("../assets/fonts/ComicRelief-Regular.wof2") format("woff2");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src:
+    local("Roboto-Bold"),
+    url("../assets/fonts/Roboto-Bold.woff") format("woff"),
+    url("../assets/fonts/Roboto-Bold.woff2") format("woff2");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src:
+    local("Roboto-Regular"),
+    url("../assets/fonts/Roboto-Regular.woff") format("woff"),
+    url("../assets/fonts/Roboto-Regular.wof2") format("woff2");
+  font-weight: normal;
+}
