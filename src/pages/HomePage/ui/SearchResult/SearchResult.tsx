@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import SmallCharacterCard from "../../../../shared/ui/SmallCharacterCard/SmallCharacterCard";
 import type { Character } from "../../../../utils/types";
 import ArrowButton from "../../../../shared/ui/Button/ArrowButton";
