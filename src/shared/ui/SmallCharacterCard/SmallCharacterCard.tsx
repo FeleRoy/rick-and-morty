@@ -1,13 +1,11 @@
-import React from "react"
-
-interface SearchResultProps{
+interface SmallCharacterCardProps{
     characterName?: string,
     characterStatus?: string,
     characterSpeices?: string
 }
 
 
-const SearchResult: React.FC<SearchResultProps> = (({characterName, characterStatus, characterSpeices})=>{
+const SmallCharacterCard: React.FC<SmallCharacterCardProps> = (({characterName, characterStatus, characterSpeices})=>{
     return(
         <>
         <div className="flex p-2 gap-5 border justify-between items-center border-solid border-white rounded-lg">
@@ -23,4 +21,4 @@ const SearchResult: React.FC<SearchResultProps> = (({characterName, characterSta
 })
 
 
-export default SearchResult;
+export default SmallCharacterCard;
