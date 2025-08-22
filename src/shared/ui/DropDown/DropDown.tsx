@@ -25,7 +25,7 @@ const DropDown: React.FC<DropDownProps> = ({ title, options, onSelect }) => {
         onChange={handleChange}
         className="p-1 border rounded-lg"
       >
-        <option className="bg-black" value="" disabled>
+        <option className="bg-black" value="">
           -- выберите вариант --
         </option>
         {options.map((opt) => (

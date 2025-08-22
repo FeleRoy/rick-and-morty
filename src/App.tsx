@@ -1,10 +1,12 @@
+import CharacterInfoSection from "./shared/CharacterInfoSection/CharacterInfoSection"
 import CharacterSearchSection from "./shared/CharacterSearchSection/CharacterSearchSection"
 
 function App() {
   return (
     <>
-    <div className="bg-black font-comic text-white h-screen p-5">
+    <div className="p-5">
       <CharacterSearchSection/>
+      <CharacterInfoSection/>
     </div>
     </>
   )

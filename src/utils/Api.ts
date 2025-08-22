@@ -5,7 +5,7 @@ import type {
   Episode,
 } from "./types";
 
-const baseUrl = "https://rickandmortyapi.com/api/character";
+const baseUrl = "https://rickandmortyapi.com/api";
 
 export async function getCharacters(
   filters: CharacterFilter = {}
@@ -46,7 +46,7 @@ export async function getCharacters(
       if (filters.status) params.append("status", filters.status);
       if (filters.species) params.append("species", filters.species);
 
-      const url = `${baseUrl}?${params.toString()}`;
+      const url = `${baseUrl}/character/?${params.toString()}`;
 
       const response = await fetch(url);
 
@@ -64,7 +64,7 @@ export async function getCharacters(
 }
 
 export async function fetchAllEpisodesByName(episodeName: string) {
-  let url = `https://rickandmortyapi.com/api/episode/?name=${episodeName}`;
+  let url = `${baseUrl}/episode/?name=${episodeName}`;
   let allEpisodes: Episode[] = [];
 
   while (url) {
@@ -95,7 +95,7 @@ export async function getCharactersByIds(ids: string[]) {
   for (let i = 0; i < ids.length; i += CHUNK_SIZE) {
     const chunk = ids.slice(i, i + CHUNK_SIZE);
     const resp = await fetch(
-      `https://rickandmortyapi.com/api/character/${chunk.join(",")}`
+      `${baseUrl}/character/${chunk.join(",")}`
     );
     if (!resp.ok) throw new Error("Ошибка получения персонажей");
     const data = await resp.json();
@@ -103,4 +103,11 @@ export async function getCharactersByIds(ids: string[]) {
     characters.push(...(Array.isArray(data) ? data : [data]));
   }
   return characters;
+}
+
+export async function getCharacterById(id:string) {
+    const resp = await fetch(`${baseUrl}/character/${id}`)
+    if (!resp.ok) throw new Error("Ошибка получения персонажа");
+    const data = await resp.json();
+    return data
 }

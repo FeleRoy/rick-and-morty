@@ -13,10 +13,11 @@ const SmallCharacterCard: React.FC<SmallCharacterCardProps> = ({
 }) => {
   return (
     <>
-      <div className="flex p-2 gap-5 border justify-between items-center border-solid border-white rounded-lg">
+      <div className="flex p-2 gap-5 border justify-between items-center border-solid border-white rounded-lg cursor-pointer">
         <img
           src={characterImg}
           className="size-14"
+          alt={characterName}
         ></img>
         <div className="flex flex-row justify-evenly items-center grow max-sm:flex-col">
           <h3>{characterName}</h3>

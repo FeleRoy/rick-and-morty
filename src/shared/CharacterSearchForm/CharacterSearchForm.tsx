@@ -1,4 +1,4 @@
-import React, { use, useEffect } from "react";
+import React, { useEffect } from "react";
 import Input from "../ui/Input/Input";
 import DropDown from "../ui/DropDown/DropDown";
 import type { CharacterFilter } from "../../utils/types";
