@@ -10,7 +10,7 @@
 * [Инструкция по запуску](#инструкция-по-запуску)
 
 ## Ссылка на стенд
-Ссылка: **здесь будет ссылка**
+Ссылка: https://feleroy.github.io/rick-and-morty/
 
 ## Скриншот
 <img width="818" height="881" alt="image" src="https://github.com/user-attachments/assets/4af32e84-5e0f-4a20-a8bc-db547d773d7a" />
