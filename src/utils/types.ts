@@ -53,7 +53,7 @@ export interface ApiEpisodesResponse {
 
 export type CharacterFilter = {
   name?: string;
-  status?: "alive" | "dead" | "unknown";
+  status?: string;
   species?: string;
-  episode?: string; // ????
+  episode?: string; 
 };
