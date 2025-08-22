@@ -1,5 +1,7 @@
 import React from "react";
 import CharacterSearchForm from "../CharacterSearchForm/CharacterSearchForm";
+import SearchResult from "../SearchResult/SearchResult";
+
 
 interface CharacterSearchSectionProps {}
 
@@ -10,6 +12,7 @@ const CharacterSearchSection: React.FC<CharacterSearchSectionProps> = ({}) =>{
             <h1 className="text-3xl mb-4">Вселенная Рик и Морти</h1>
             <CharacterSearchForm/>
             <h2 className="text-2xl my-4">Найдено</h2>
+            <SearchResult/>
         </div>
     );
 }
