@@ -9,6 +9,7 @@ interface SearchResultProps {
 const SearchResult: React.FC<SearchResultProps> = ({ characters }) => {
   return (
     <div className="flex flex-col border border-solid border-white h-64 rounded-xs overflow-auto gap-5 p-5">
+      {characters?.length == 0 && <h3 className="">Ничего не найдено</h3>}
       {characters &&
         characters.map((item) => (
           <SmallCharacterCard

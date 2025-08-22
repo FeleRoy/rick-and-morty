@@ -12,14 +12,13 @@ const CharacterSearchSection: React.FC<CharacterSearchSectionProps> = ({}) =>{
       const [characters, setCharacters] = React.useState<Character[]>([])
 
       const handleFormChange = (data: CharacterFilter)=>{
-        console.log(data);
         // TODO: реализовать подгрузку элементов с других страниц
         getCharacters(data)
           .then(characters => {
             setCharacters(characters);
-            console.log(characters);
           })
           .catch(error => {
+            setCharacters([]);
             console.error('Ошибка запроса персонажей:', error);
           });
       }
