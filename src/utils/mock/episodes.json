@@ -1,0 +1,65 @@
+{
+  "info": { "count": 2, "pages": 1, "next": null, "prev": null },
+  "results": [
+    {
+      "id": 6,
+      "name": "Rick Potion #9",
+      "air_date": "January 27, 2014",
+      "episode": "S01E06",
+      "characters": [
+        "https://rickandmortyapi.com/api/character/1",
+        "https://rickandmortyapi.com/api/character/2",
+        "https://rickandmortyapi.com/api/character/3",
+        "https://rickandmortyapi.com/api/character/4",
+        "https://rickandmortyapi.com/api/character/5",
+        "https://rickandmortyapi.com/api/character/38",
+        "https://rickandmortyapi.com/api/character/58",
+        "https://rickandmortyapi.com/api/character/82",
+        "https://rickandmortyapi.com/api/character/83",
+        "https://rickandmortyapi.com/api/character/92",
+        "https://rickandmortyapi.com/api/character/155",
+        "https://rickandmortyapi.com/api/character/175",
+        "https://rickandmortyapi.com/api/character/179",
+        "https://rickandmortyapi.com/api/character/181",
+        "https://rickandmortyapi.com/api/character/216",
+        "https://rickandmortyapi.com/api/character/234",
+        "https://rickandmortyapi.com/api/character/239",
+        "https://rickandmortyapi.com/api/character/249",
+        "https://rickandmortyapi.com/api/character/251",
+        "https://rickandmortyapi.com/api/character/271",
+        "https://rickandmortyapi.com/api/character/293",
+        "https://rickandmortyapi.com/api/character/338",
+        "https://rickandmortyapi.com/api/character/343",
+        "https://rickandmortyapi.com/api/character/394"
+      ],
+      "url": "https://rickandmortyapi.com/api/episode/6",
+      "created": "2017-11-10T12:56:34.339Z"
+    },
+    {
+      "id": 49,
+      "name": "Rickternal Friendshine of the Spotless Mort",
+      "air_date": "August 8, 2021",
+      "episode": "S05E08",
+      "characters": [
+        "https://rickandmortyapi.com/api/character/1",
+        "https://rickandmortyapi.com/api/character/2",
+        "https://rickandmortyapi.com/api/character/5",
+        "https://rickandmortyapi.com/api/character/4",
+        "https://rickandmortyapi.com/api/character/3",
+        "https://rickandmortyapi.com/api/character/47",
+        "https://rickandmortyapi.com/api/character/592",
+        "https://rickandmortyapi.com/api/character/779",
+        "https://rickandmortyapi.com/api/character/780",
+        "https://rickandmortyapi.com/api/character/137",
+        "https://rickandmortyapi.com/api/character/781",
+        "https://rickandmortyapi.com/api/character/782",
+        "https://rickandmortyapi.com/api/character/783",
+        "https://rickandmortyapi.com/api/character/784",
+        "https://rickandmortyapi.com/api/character/785",
+        "https://rickandmortyapi.com/api/character/786"
+      ],
+      "url": "https://rickandmortyapi.com/api/episode/49",
+      "created": "2021-10-15T17:00:24.104Z"
+    }
+  ]
+}

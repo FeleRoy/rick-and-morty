@@ -1,24 +1,19 @@
 import React from "react"
+import type { Character } from "../../utils/types";
+import SmallCharacterCard from "../ui/SmallCharacterCard/SmallCharacterCard";
 
 interface SearchResultProps{
-    characterName?: string,
-    characterStatus?: string,
-    characterSpeices?: string
+    characters?: Character[];
 }
 
 
-const SearchResult: React.FC<SearchResultProps> = (({characterName, characterStatus, characterSpeices})=>{
+const SearchResult: React.FC<SearchResultProps> = (({characters})=>{
     return(
-        <>
-        <div className="flex p-2 gap-5 border justify-between items-center border-solid border-white rounded-lg">
-            <img src="https://rickandmortyapi.com/api/character/avatar/10.jpeg" className="size-14"></img>
-            <div className="flex flex-row justify-evenly items-center grow max-sm:flex-col">
-            <h3>{characterName}</h3>
-            <h3 className={`${characterStatus === "Alive" ? 'text-blue-600' : 'text-red-600'}`}>{characterStatus}</h3>
-            <h3 className={`${characterSpeices === "Human" ? 'text-emerald-700' : 'text-purple-500'}`}>{characterSpeices}</h3>
-            </div>
+        <div className="flex flex-col border border-solid border-white h-64 rounded-xs overflow-auto gap-5 p-5">
+            {characters && characters.map((item)=>(
+                <SmallCharacterCard characterImg={item.image} characterName={item.name} characterSpeices={item.species} characterStatus={item.status} key={item.id}/>
+            ))}
         </div>
-        </>
     )
 })
 

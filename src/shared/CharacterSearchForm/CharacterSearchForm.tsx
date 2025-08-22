@@ -44,7 +44,7 @@ const CharacterSearchForm: React.FC<CharacterSearchFormProps> = () => {
         label="Эпизод"
         onChange={() => {}}
         inputId="episode"
-        placeholder="Введите название или номер эпизода"
+        placeholder="Введите номер эпизода"
       />
     </form>
   );
