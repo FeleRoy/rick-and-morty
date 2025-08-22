@@ -1,30 +1,5 @@
 import type React from "react";
-
-
-
-const character = {
-    "id": 1,
-    "name": "Rick Sanchez",
-    "status": "Alive",
-    "species": "Human",
-    "type": "",
-    "gender": "Male",
-    "origin": {
-        "name": "Earth (C-137)",
-        "url": "https://rickandmortyapi.com/api/location/1"
-    },
-    "location": {
-        "name": "Citadel of Ricks",
-        "url": "https://rickandmortyapi.com/api/location/3"
-    },
-    "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
-    "episode": [
-        "https://rickandmortyapi.com/api/episode/1",
-        "https://rickandmortyapi.com/api/episode/2",
-    ],
-    "url": "https://rickandmortyapi.com/api/character/1",
-    "created": "2017-11-04T18:48:46.250Z"
-}
+import type { Character } from "../../../../utils/types";
 
 const colorForGender = (gender: string)=>{
   if(gender === "Male") return "text-sky-400"
@@ -34,10 +9,13 @@ const colorForGender = (gender: string)=>{
   return ''
 }
 
-interface CharacterInfoSectionProps {}
+interface CharacterInfoSectionProps {
+  character?: Character;
+}
 
-const CharacterInfoSection: React.FC<CharacterInfoSectionProps> = ({}) => {
+const CharacterInfoSection: React.FC<CharacterInfoSectionProps> = ({character}) => {
   return (
+    character && (
     <div className="border border-solid max-w-2xl mx-auto p-3 rounded-3xl flex flex-col items-center">
       <div className="flex gap-2 max-sm:flex-col">
         <img src={character.image} alt={character.name} className="size-40" />
@@ -52,6 +30,7 @@ const CharacterInfoSection: React.FC<CharacterInfoSectionProps> = ({}) => {
         </div>
       </div>
     </div>
+    )
   );
 };
 

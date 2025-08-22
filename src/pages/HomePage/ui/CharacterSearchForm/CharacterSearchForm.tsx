@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
-import Input from "../ui/Input/Input";
-import DropDown from "../ui/DropDown/DropDown";
-import type { CharacterFilter } from "../../utils/types";
+import Input from "../../../../shared/ui/Input/Input";
+import type { CharacterFilter } from "../../../../utils/types";
+import DropDown from "../../../../shared/ui/DropDown/DropDown";
+
 
 interface CharacterSearchFormProps {
   onChange: (data: CharacterFilter) => void;

@@ -1,8 +1,8 @@
 import React from "react";
 import CharacterSearchForm from "../CharacterSearchForm/CharacterSearchForm";
+import type { Character, CharacterFilter } from "../../../../utils/types";
+import { getCharacters } from "../../../../utils/Api";
 import SearchResult from "../SearchResult/SearchResult";
-import type { Character, CharacterFilter } from "../../utils/types";
-import { getCharacters } from "../../utils/Api";
 
 
 interface CharacterSearchSectionProps {}

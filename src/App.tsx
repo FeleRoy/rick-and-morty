@@ -1,13 +1,9 @@
-import CharacterInfoSection from "./shared/CharacterInfoSection/CharacterInfoSection"
-import CharacterSearchSection from "./shared/CharacterSearchSection/CharacterSearchSection"
+import HomePage from "./pages/HomePage/HomePage"
 
 function App() {
   return (
     <>
-    <div className="p-5">
-      <CharacterSearchSection/>
-      <CharacterInfoSection/>
-    </div>
+    <HomePage/>
     </>
   )
 }
