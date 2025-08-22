@@ -31,8 +31,9 @@
 * TypeScript
 * TailwindCSS
 * HTML5
+* Vite
 
-[![Tech](https://skillicons.dev/icons?i=react,typescript,tailwind,html&theme=dark)](https://skillicons.dev)
+[![Tech](https://skillicons.dev/icons?i=react,typescript,tailwind,html,vite&theme=dark)](https://skillicons.dev)
 
 ## Инструкция по запуску
 1)  Клонируйте репозиторий.
