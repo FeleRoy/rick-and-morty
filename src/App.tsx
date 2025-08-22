@@ -1,11 +1,9 @@
-import CharacterSearchSection from "./shared/CharacterSearchSection/CharacterSearchSection"
+import HomePage from "./pages/HomePage/HomePage"
 
 function App() {
   return (
     <>
-    <div className="bg-black font-comic text-white h-screen p-5">
-      <CharacterSearchSection/>
-    </div>
+    <HomePage/>
     </>
   )
 }

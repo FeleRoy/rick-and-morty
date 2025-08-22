@@ -1,22 +1,33 @@
+import { useCharacterContext } from "../../../utils/Context/CharacterContext";
+
 interface SmallCharacterCardProps {
   characterName?: string;
   characterStatus?: string;
   characterSpeices?: string;
   characterImg?: string;
+  characterId: number;
 }
 
 const SmallCharacterCard: React.FC<SmallCharacterCardProps> = ({
   characterName,
   characterStatus,
   characterSpeices,
-  characterImg
+  characterImg, 
+  characterId,
 }) => {
+
+  const { setSelectedId } = useCharacterContext();
+
+  const handleClick = () => {
+    setSelectedId(characterId)
+  }
   return (
     <>
-      <div className="flex p-2 gap-5 border justify-between items-center border-solid border-white rounded-lg">
+      <div onClick={handleClick} id={characterId.toString()} className="flex p-2 gap-5 border justify-between items-center border-solid border-white rounded-lg cursor-pointer">
         <img
           src={characterImg}
           className="size-14"
+          alt={characterName}
         ></img>
         <div className="flex flex-row justify-evenly items-center grow max-sm:flex-col">
           <h3>{characterName}</h3>
