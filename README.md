@@ -13,7 +13,8 @@
 Ссылка: **здесь будет ссылка**
 
 ## Скриншот
-<img width="951" height="687" alt="image" src="https://github.com/user-attachments/assets/d2856afd-265c-497c-9e87-f9db3fff5d31" />
+<img width="818" height="881" alt="image" src="https://github.com/user-attachments/assets/4af32e84-5e0f-4a20-a8bc-db547d773d7a" />
+
 
 ## Что реализовано
 * Адаптивный сайт с поиском персонажей из вселенной Рик и Морти с помощью фильтров
