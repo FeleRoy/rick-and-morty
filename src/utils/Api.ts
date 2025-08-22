@@ -9,7 +9,7 @@ const baseUrl = "https://rickandmortyapi.com/api";
 
 export async function getCharacters(
   filters: CharacterFilter = {}
-): Promise<Character[]> {
+): Promise<ApiCharacterResponse> {
   try {
     if (filters.episode) {
       // Если задан фильтр по эпизоду, сначала получаем все эпизоды
@@ -20,8 +20,7 @@ export async function getCharacters(
       const charactersIdsArray: string[] = [...charactersIdsSet].filter(
         (item) => item !== undefined
       ) as string[];
-      let charactersFromEpisodes =
-        await getCharactersByIds(charactersIdsArray);
+      let charactersFromEpisodes = await getCharactersByIds(charactersIdsArray);
       if (filters.name) {
         charactersFromEpisodes = charactersFromEpisodes.filter((c) =>
           c.name.toLowerCase().includes(filters.name!.toLowerCase())
@@ -37,7 +36,16 @@ export async function getCharacters(
           (c) => c.species.toLowerCase() === filters.species!.toLowerCase()
         );
       }
-      return charactersFromEpisodes;
+
+      return {
+        info: {
+          count: charactersFromEpisodes.length,
+          pages: 0,
+          next: null,
+          prev: null,
+        },
+        results: charactersFromEpisodes,
+      };
     } else {
       // Если не задан фильтр по эпизоду - выполняем обычный запрос
       const params = new URLSearchParams();
@@ -55,7 +63,7 @@ export async function getCharacters(
       }
 
       const data: ApiCharacterResponse = await response.json();
-      return data.results;
+      return data;
     }
   } catch (error) {
     console.error("Ошибка запроса:", error);
@@ -94,9 +102,7 @@ export async function getCharactersByIds(ids: string[]) {
   const characters = [];
   for (let i = 0; i < ids.length; i += CHUNK_SIZE) {
     const chunk = ids.slice(i, i + CHUNK_SIZE);
-    const resp = await fetch(
-      `${baseUrl}/character/${chunk.join(",")}`
-    );
+    const resp = await fetch(`${baseUrl}/character/${chunk.join(",")}`);
     if (!resp.ok) throw new Error("Ошибка получения персонажей");
     const data = await resp.json();
     //проверка на массив и добавление элементов
@@ -105,9 +111,9 @@ export async function getCharactersByIds(ids: string[]) {
   return characters;
 }
 
-export async function getCharacterById(id:string): Promise<Character> {
-    const resp = await fetch(`${baseUrl}/character/${id}`)
-    if (!resp.ok) throw new Error("Ошибка получения персонажа");
-    const data = await resp.json();
-    return data
+export async function getCharacterById(id: string): Promise<Character> {
+  const resp = await fetch(`${baseUrl}/character/${id}`);
+  if (!resp.ok) throw new Error("Ошибка получения персонажа");
+  const data = await resp.json();
+  return data;
 }

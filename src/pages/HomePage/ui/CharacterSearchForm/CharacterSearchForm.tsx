@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Input from "../../../../shared/ui/Input/Input";
 import type { CharacterFilter } from "../../../../utils/types";
 import DropDown from "../../../../shared/ui/DropDown/DropDown";
-
 
 interface CharacterSearchFormProps {
   onChange: (data: CharacterFilter) => void;
@@ -17,9 +16,22 @@ const CharacterSearchForm: React.FC<CharacterSearchFormProps> = ({
     species: "",
     episode: "",
   });
+  const isFirstRender = useRef(true);
 
   useEffect(() => {
-    onChange(formData)
+    const saved = localStorage.getItem("formData");
+    if (saved) {
+      setFormData(JSON.parse(saved));
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+    localStorage.setItem("formData", JSON.stringify(formData));
+    onChange(formData);
   }, [formData]);
 
   return (
@@ -31,6 +43,7 @@ const CharacterSearchForm: React.FC<CharacterSearchFormProps> = ({
         }}
         inputId="name"
         placeholder="Введите имя персонажа"
+        value={formData.name}
       />
       <fieldset className="flex justify-between mb-3 justify-items-stretch gap-3 max-sm:flex-col">
         <DropDown
@@ -43,6 +56,7 @@ const CharacterSearchForm: React.FC<CharacterSearchFormProps> = ({
           onSelect={(selected) => {
             setFormData({ ...formData, status: selected });
           }}
+          storageValue={formData.status}
         ></DropDown>
         <DropDown
           title={"Раса?"}
@@ -61,6 +75,7 @@ const CharacterSearchForm: React.FC<CharacterSearchFormProps> = ({
           onSelect={(selected) => {
             setFormData({ ...formData, species: selected });
           }}
+          storageValue={formData.species}
         ></DropDown>
       </fieldset>
       <Input
@@ -70,6 +85,7 @@ const CharacterSearchForm: React.FC<CharacterSearchFormProps> = ({
         }}
         inputId="episode"
         placeholder="Введите номер эпизода"
+        value={formData.episode}
       />
     </form>
   );

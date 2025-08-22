@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 type optionsType = {ru:string, eng: string}
 
@@ -6,9 +6,10 @@ type DropDownProps = {
   title: string;
   options: optionsType[];
   onSelect: (value: string) => void;
+  storageValue?: string;
 };
 
-const DropDown: React.FC<DropDownProps> = ({ title, options, onSelect }) => {
+const DropDown: React.FC<DropDownProps> = ({ title, options, onSelect, storageValue }) => {
   const [value, setValue] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -16,6 +17,12 @@ const DropDown: React.FC<DropDownProps> = ({ title, options, onSelect }) => {
     setValue(selected);
     onSelect(selected);
   };
+
+  useEffect(() => {
+    if (storageValue !== undefined) {
+      setValue(storageValue);
+    }
+  }, [storageValue]);
 
   return (
     <div className="flex flex-col gap-1 grow">

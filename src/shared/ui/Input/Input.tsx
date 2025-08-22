@@ -6,6 +6,7 @@ interface InputProps {
     type?: string;
     inputId: string;
     placeholder?: string;
+    value?: string;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -14,6 +15,7 @@ const Input: React.FC<InputProps> = ({
     type = 'text',
     inputId,
     placeholder,
+    value
 }) => {
     return (
         <div className='flex flex-col gap-1 mb-3'>
@@ -24,6 +26,7 @@ const Input: React.FC<InputProps> = ({
                 type={type}
                 onChange={onChange}
                 placeholder={placeholder}
+                value={value}
             />
         </div>
     );
