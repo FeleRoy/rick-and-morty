@@ -70,3 +70,20 @@ export function characterIdsFromEpisodes(episodes: Episode[]){
     const charactersIds = charactersUrls.map(url => url.split("/").pop()) || [];
     return new Set(charactersIds)
 }
+
+const CHUNK_SIZE = 20
+
+export async function CharactersByIds(ids: string[]){
+    const characters = [];
+    for (let i = 0; i < ids.length; i += CHUNK_SIZE) {
+      const chunk = ids.slice(i, i + CHUNK_SIZE);
+      const resp = await fetch(
+        `https://rickandmortyapi.com/api/character/${chunk.join(",")}`
+      );
+      if (!resp.ok) throw new Error("Ошибка получения персонажей");
+      const data = await resp.json();
+      //проверка на массив и добавление элементов
+      characters.push(...(Array.isArray(data) ? data : [data]));
+    }
+    return characters
+}
