@@ -17,6 +17,7 @@ const SearchResult: React.FC<SearchResultProps> = ({ characters }) => {
             characterSpeices={item.species}
             characterStatus={item.status}
             characterId={item.id}
+            key={item.id}
           />
         ))}
     </div>

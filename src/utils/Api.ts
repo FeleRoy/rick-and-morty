@@ -105,7 +105,7 @@ export async function getCharactersByIds(ids: string[]) {
   return characters;
 }
 
-export async function getCharacterById(id:string) {
+export async function getCharacterById(id:string): Promise<Character> {
     const resp = await fetch(`${baseUrl}/character/${id}`)
     if (!resp.ok) throw new Error("Ошибка получения персонажа");
     const data = await resp.json();
