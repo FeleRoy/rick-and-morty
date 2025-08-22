@@ -21,7 +21,6 @@ const CharacterSearchForm: React.FC<CharacterSearchFormProps> = ({
   useEffect(() => {
     const saved = localStorage.getItem("formData");
     if (saved) {
-      console.log(JSON.parse(saved));
       setFormData(JSON.parse(saved));
     }
   }, []);

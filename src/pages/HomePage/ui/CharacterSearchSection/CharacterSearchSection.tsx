@@ -14,8 +14,8 @@ const CharacterSearchSection: React.FC<CharacterSearchSectionProps> = ({}) =>{
       const handleFormChange = (data: CharacterFilter)=>{
         // TODO: реализовать подгрузку элементов с других страниц
         getCharacters(data)
-          .then(characters => {
-            setCharacters(characters);
+          .then(response => {
+            setCharacters(response.results);
           })
           .catch(error => {
             setCharacters([]);

@@ -6,7 +6,7 @@ type ButtonProps = {
 };
 
 const Button: React.FC<ButtonProps> = ({onClick, text}) => (
-    <button onClick={onClick} className='border border-solid border-white rounded-xl'>
+    <button onClick={onClick} className='border border-solid border-white rounded-xl cursor-pointer'>
         {text}
     </button>
 );
