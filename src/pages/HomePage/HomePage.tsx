@@ -8,12 +8,10 @@ interface HomePageProps {}
 
 const HomePage: React.FC<HomePageProps> = ({}) => {
   return (
-    <>
     <div className="p-5">
       <CharacterSearchSection/>
       <CharacterInfoSection/>
     </div>
-    </>
   )
 }
 

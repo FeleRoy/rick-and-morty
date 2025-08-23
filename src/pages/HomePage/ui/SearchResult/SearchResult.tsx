@@ -37,7 +37,7 @@ const SearchResult: React.FC<SearchResultProps> = ({
           <span className="ml-3">Загрузка...</span>
         </div>
       )}
-      {characters?.length == 0 && (
+      {characters?.length == 0 && !isLoading && (
         <h3 className="text-gray-400">Ничего не найдено</h3>
       )}
       {characters &&

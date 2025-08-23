@@ -84,7 +84,7 @@ const CharacterSearchForm: React.FC<CharacterSearchFormProps> = ({
           setFormData({ ...formData, episode: e.target.value });
         }}
         inputId="episode"
-        placeholder="Введите номер эпизода"
+        placeholder="Введите название эпизода"
         value={formData.episode}
       />
     </form>
