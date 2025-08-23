@@ -13,7 +13,8 @@
 Ссылка: https://feleroy.github.io/rick-and-morty/
 
 ## Скриншот
-<img width="818" height="881" alt="image" src="https://github.com/user-attachments/assets/4af32e84-5e0f-4a20-a8bc-db547d773d7a" />
+<img width="812" height="900" alt="image" src="https://github.com/user-attachments/assets/17d33a3f-4454-46eb-bf82-efe18c753622" />
+
 
 
 ## Что реализовано
@@ -25,7 +26,7 @@
 ## Что можно улучшить
 * Реализовать светлую и тёмную тему
 * Добавить больше фильтров
-* Добавить поддержку eng
+* Добавить поддержку других языков
 * Добавить Prettier и Husky
 * Покрыть тестами
 * Добавить CI/CD
