@@ -56,4 +56,5 @@ export type CharacterFilter = {
   status?: string;
   species?: string;
   episode?: string; 
+  page?: number;
 };

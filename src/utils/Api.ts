@@ -49,7 +49,7 @@ export async function getCharacters(
     } else {
       // Если не задан фильтр по эпизоду - выполняем обычный запрос
       const params = new URLSearchParams();
-
+      if (filters.page) params.append("page", filters.page.toString());
       if (filters.name) params.append("name", filters.name);
       if (filters.status) params.append("status", filters.status);
       if (filters.species) params.append("species", filters.species);
