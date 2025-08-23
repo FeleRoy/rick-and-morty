@@ -1,7 +1,7 @@
 import type React from "react";
 import type { Character } from "../../../../utils/types";
 import { useCharacterContext } from "../../../../utils/Context/CharacterContext";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { getCharacterById } from "../../../../utils/Api";
 import Button from "../../../../shared/ui/Button/Button";
 
