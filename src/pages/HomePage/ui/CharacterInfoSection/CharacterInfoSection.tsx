@@ -37,7 +37,7 @@ const CharacterInfoSection: React.FC<CharacterInfoSectionProps> = ({}) => {
       });
     } else {
       localStorage.setItem("selectedId", JSON.stringify(null));
-      setCharacter(null); // если сбросили — очистить данные
+      setCharacter(null); // если сбросили - очистить данные
     }
   }, [selectedId]);
 
