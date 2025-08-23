@@ -88,6 +88,7 @@ const CharacterInfoSection: React.FC<CharacterInfoSectionProps> = ({}) => {
                 </span>
               </h2>
               <h2>Type: {character.type || "—"}</h2>
+              <h2>Number of episodes: {character.episode.length}</h2>
               <h1>
                 Gender:{" "}
                 <span className={`${colorForGender(character.gender)}`}>
