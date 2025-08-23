@@ -59,7 +59,10 @@ export async function getCharacters(
       const response = await fetch(url);
 
       if (!response.ok) {
-        throw new Error(`Ошибка запроса: ${response.status}`);
+        const errorBody = await response.json().catch(() => null);
+        const message =
+          errorBody?.error || `Ошибка запроса: ${response.status}`;
+        throw new Error(message);
       }
 
       const data: ApiCharacterResponse = await response.json();
