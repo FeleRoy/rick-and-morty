@@ -1,3 +1,4 @@
+import { colorForSpecies } from "../../../utils/Colors/Colors";
 import { useCharacterContext } from "../../../utils/Context/CharacterContext";
 
 interface SmallCharacterCardProps {
@@ -37,7 +38,7 @@ const SmallCharacterCard: React.FC<SmallCharacterCardProps> = ({
             {characterStatus}
           </h3>
           <h3
-            className={`${characterSpeices === "Human" ? "text-emerald-700" : "text-purple-500"}`}
+            className={colorForSpecies(characterSpeices)}
           >
             {characterSpeices}
           </h3>

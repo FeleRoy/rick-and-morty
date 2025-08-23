@@ -4,14 +4,7 @@ import { useCharacterContext } from "../../../../utils/Context/CharacterContext"
 import { useEffect, useRef, useState } from "react";
 import { getCharacterById } from "../../../../utils/Api";
 import Button from "../../../../shared/ui/Button/Button";
-
-const colorForGender = (gender: string) => {
-  if (gender === "Male") return "text-sky-400";
-  if (gender === "Female") return "text-pink-400";
-  if (gender === "Genderless") return "text-gray-400";
-  if (gender === "Unknown") return "text-orange-600";
-  return "";
-};
+import { colorForGender, colorForSpecies } from "../../../../utils/Colors/Colors";
 
 interface CharacterInfoSectionProps {}
 
@@ -22,7 +15,7 @@ const CharacterInfoSection: React.FC<CharacterInfoSectionProps> = ({}) => {
 
   useEffect(() => {
     const saved = localStorage.getItem("selectedId");
-    if (saved && saved !== 'null') {
+    if (saved && saved !== "null") {
       setSelectedId(Number(saved));
       getCharacterById(saved.toString()).then((data) => {
         setCharacter(data);
@@ -78,11 +71,7 @@ const CharacterInfoSection: React.FC<CharacterInfoSectionProps> = ({}) => {
               <h2>
                 Species:{" "}
                 <span
-                  className={`${
-                    character.species === "Human"
-                      ? "text-emerald-700"
-                      : "text-purple-500"
-                  }`}
+                  className={colorForSpecies(character.species)}
                 >
                   {character.species}
                 </span>
