@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import CharacterSearchForm from "../CharacterSearchForm/CharacterSearchForm";
 import type { Character, CharacterFilter } from "../../../../utils/types";
 import { getCharacters } from "../../../../utils/Api";
@@ -24,10 +24,10 @@ const CharacterSearchSection: React.FC<CharacterSearchSectionProps> = ({}) => {
     setCurrentPage(currentPage - 1);
   };
 
-  const handleFormChange = (data: CharacterFilter) => {
+  const handleFormChange = useCallback((data: CharacterFilter) => {
     setFilters(data);
     setCurrentPage(1);
-  };
+  }, []);
 
   useEffect(() => {
     setCharacters([]);

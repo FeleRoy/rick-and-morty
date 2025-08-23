@@ -22,7 +22,7 @@ const CharacterInfoSection: React.FC<CharacterInfoSectionProps> = ({}) => {
 
   useEffect(() => {
     const saved = localStorage.getItem("selectedId");
-    if (saved) {
+    if (saved && saved !== 'null') {
       setSelectedId(Number(saved));
       getCharacterById(saved.toString()).then((data) => {
         setCharacter(data);

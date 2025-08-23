@@ -58,3 +58,10 @@ export type CharacterFilter = {
   episode?: string; 
   page?: number;
 };
+
+export type CharacterFilterWithoutPage = {
+  name?: string;
+  status?: string;
+  species?: string;
+  episode?: string; 
+};

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 interface InputProps {
     label: string;
@@ -9,7 +9,7 @@ interface InputProps {
     value?: string;
 }
 
-const Input: React.FC<InputProps> = ({
+const Input: React.FC<InputProps> = memo(({
     label,
     onChange,
     type = 'text',
@@ -30,6 +30,6 @@ const Input: React.FC<InputProps> = ({
             />
         </div>
     );
-};
+});
 
 export default Input;
