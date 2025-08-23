@@ -3,7 +3,7 @@
 
 ## Содержание
 * [Ссылка на публичный стенд](#ссылка-на-стенд)
-* [Скриншот](#скриншот)
+* [Скриншоты](#скриншоты)
 * [Что реализовано](#что-реализовано)
 * [Что можно улучшить](#что-можно-улучшить)
 * [Технологии](#технологии)
@@ -12,8 +12,10 @@
 ## Ссылка на стенд
 Ссылка: https://feleroy.github.io/rick-and-morty/
 
-## Скриншот
-<img width="812" height="900" alt="image" src="https://github.com/user-attachments/assets/17d33a3f-4454-46eb-bf82-efe18c753622" />
+## Скриншоты
+<img width="500" height="555" alt="image" src="https://github.com/user-attachments/assets/17d33a3f-4454-46eb-bf82-efe18c753622" />
+<img width="256" height="555" alt="image" src="https://github.com/user-attachments/assets/a46249b4-71af-4374-b6cd-ab04536cb0d7" />
+
 
 ## Что реализовано
 * Адаптивный сайт с поиском персонажей из вселенной Рик и Морти с помощью фильтров
