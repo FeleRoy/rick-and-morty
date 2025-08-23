@@ -10,10 +10,11 @@
 * [Инструкция по запуску](#инструкция-по-запуску)
 
 ## Ссылка на стенд
-Ссылка: **здесь будет ссылка**
+Ссылка: https://feleroy.github.io/rick-and-morty/
 
 ## Скриншот
-<img width="951" height="687" alt="image" src="https://github.com/user-attachments/assets/d2856afd-265c-497c-9e87-f9db3fff5d31" />
+<img width="818" height="881" alt="image" src="https://github.com/user-attachments/assets/4af32e84-5e0f-4a20-a8bc-db547d773d7a" />
+
 
 ## Что реализовано
 * Адаптивный сайт с поиском персонажей из вселенной Рик и Морти с помощью фильтров
@@ -24,21 +25,25 @@
 ## Что можно улучшить
 * Реализовать светлую и тёмную тему
 * Под каждую расу сделать свой цвет текста
-* Добавить больше фильтров 
+* Добавить больше фильтров
+* Добавить поддержку eng
+* Добавить Prettier и Husky
+* Покрыть тестами
 
 ## Технологии
 * React
 * TypeScript
 * TailwindCSS
 * HTML5
+* Vite
 
-[![Tech](https://skillicons.dev/icons?i=react,typescript,tailwind,html&theme=dark)](https://skillicons.dev)
+[![Tech](https://skillicons.dev/icons?i=react,typescript,tailwind,html,vite&theme=dark)](https://skillicons.dev)
 
 ## Инструкция по запуску
 1)  Клонируйте репозиторий.
-2)  Перейдите в репизиторий проекта
+2)  Перейдите в репозиторий проекта
  ```bash
-cd ваш-репозиторий
+cd rick-and-morty
   ```
 3) Установите зависимости:
  ```bash
