@@ -1,7 +1,7 @@
 import type React from "react";
 import type { Character } from "../../../../utils/types";
 import { useCharacterContext } from "../../../../utils/Context/CharacterContext";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { getCharacterById } from "../../../../utils/Api";
 import Button from "../../../../shared/ui/Button/Button";
 
@@ -18,11 +18,12 @@ interface CharacterInfoSectionProps {}
 const CharacterInfoSection: React.FC<CharacterInfoSectionProps> = ({}) => {
   const [character, setCharacter] = useState<Character | null>(null);
   const { selectedId, setSelectedId } = useCharacterContext();
+  const isFirstRender = useRef(true);
 
   useEffect(() => {
     const saved = localStorage.getItem("selectedId");
     if (saved) {
-      setSelectedId(Number(saved))
+      setSelectedId(Number(saved));
       getCharacterById(saved.toString()).then((data) => {
         setCharacter(data);
       });
@@ -30,6 +31,10 @@ const CharacterInfoSection: React.FC<CharacterInfoSectionProps> = ({}) => {
   }, []);
 
   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
     if (selectedId) {
       localStorage.setItem("selectedId", JSON.stringify(selectedId));
       getCharacterById(selectedId?.toString()).then((data) => {
@@ -37,7 +42,7 @@ const CharacterInfoSection: React.FC<CharacterInfoSectionProps> = ({}) => {
       });
     } else {
       localStorage.setItem("selectedId", JSON.stringify(null));
-      setCharacter(null); // если сбросили - очистить данные
+      setCharacter(null);
     }
   }, [selectedId]);
 
