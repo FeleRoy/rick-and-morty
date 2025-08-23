@@ -16,6 +16,7 @@ interface SearchResultProps {
   handleNextPage: () => void;
   handlePrevPage: () => void;
   isLoading: boolean;
+  error?: string | null;
 }
 
 const SearchResult: React.FC<SearchResultProps> = ({
@@ -28,6 +29,7 @@ const SearchResult: React.FC<SearchResultProps> = ({
   handlePrevPage,
   handleNextPage,
   isLoading,
+  error
 }) => {
   return (
     <div className="flex flex-col border border-solid border-white h-64 rounded-xs overflow-auto gap-5 p-5">
@@ -38,8 +40,9 @@ const SearchResult: React.FC<SearchResultProps> = ({
         </div>
       )}
       {characters?.length == 0 && !isLoading && (
-        <h3 className="text-gray-400">Ничего не найдено</h3>
+        <h3 className="text-gray-400">Список пуст</h3>
       )}
+      {error && <div className="text-red-500">{error}</div>}
       {characters &&
         characters.map((item) => (
           <SmallCharacterCard

@@ -15,6 +15,7 @@ const CharacterSearchSection: React.FC<CharacterSearchSectionProps> = ({}) => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [filters, setFilters] = useState<CharacterFilter>({});
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleNextPage = () => {
     setCurrentPage(currentPage + 1);
@@ -30,6 +31,7 @@ const CharacterSearchSection: React.FC<CharacterSearchSectionProps> = ({}) => {
   }, []);
 
   useEffect(() => {
+    setError(null);
     setCharacters([]);
     setIsLoading(true);
     const dataWithPage = { ...filters, page: currentPage };
@@ -41,9 +43,15 @@ const CharacterSearchSection: React.FC<CharacterSearchSectionProps> = ({}) => {
         });
         setCharacters(response.results);
       })
-      .catch((error) => {
+      .catch((err) => {
         setCharacters([]);
-        console.error("Ошибка запроса персонажей:", error);
+        // Если сервер вернул JSON с {"error": "..."}
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError("Неизвестная ошибка");
+        }
+        console.error("Ошибка запроса персонажей:", err);
       })
       .finally(() => {
         setIsLoading(false);
@@ -62,6 +70,7 @@ const CharacterSearchSection: React.FC<CharacterSearchSectionProps> = ({}) => {
         handlePrevPage={handlePrevPage}
         characters={characters}
         isLoading={isLoading}
+        error={error}
       />
     </div>
   );
